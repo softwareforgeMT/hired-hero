@@ -1,0 +1,1934 @@
+ [{
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Wellfound",
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw",
+               "href":"https://wellfound.com/"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black underline-offset-8 hover:!text-dark-link underline",
+               "href":"https://wellfound.com/discover"
+            },
+            "text":"Discover"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black underline-offset-8 hover:!text-dark-link",
+               "href":"https://wellfound.com/jobs"
+            },
+            "text":"Find Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black underline-offset-8 hover:!text-dark-link",
+               "href":"https://wellfound.com/recruit/overview"
+            },
+            "text":"For Recruiters"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/lark-3"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/lark-3"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Lark"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4045222-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/riskified"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/riskified"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Riskified"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4013302-implementation-project-manager"
+            },
+            "text":"Implementation Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3975930-technical-account-manager"
+            },
+            "text":"Technical Account Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3962731-project-manager-executive-assistant"
+            },
+            "text":"Project Manager & Executive Assistant"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/brainstation-4"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/brainstation-4"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"BrainStation"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4015813-manager"
+            },
+            "text":"Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4015810-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4004957-senior-manager-strategy-technology"
+            },
+            "text":"Senior Manager, Strategy & Technology"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/veripark-1"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/veripark-1"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Veripark"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4050119-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3991680-associate-project-manager"
+            },
+            "text":"Associate Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/oaktech-systems"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/oaktech-systems"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Oaktech Systems"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3933274-senior-manager-professional-services"
+            },
+            "text":"Senior Manager - Professional Services"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3357112-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/luma-health"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/luma-health"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Luma Health"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3940376-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3940375-senior-video-producer"
+            },
+            "text":"Senior Video Producer"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/juniper-square"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/juniper-square"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Juniper Square"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3213908-senior-project-manager"
+            },
+            "text":"Senior Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4053489-senior-data-product-services-manager"
+            },
+            "text":"Senior Data Product Services Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3933978-manager-fund-administration-investor-services"
+            },
+            "text":"Manager, Fund Administration (Investor Services)"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/auraframes"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/auraframes"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Aura Frames"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4053566-product-development-project-manager"
+            },
+            "text":"Product Development Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3936494-crm-manager"
+            },
+            "text":"CRM Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/boa-esporte-clube"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/boa-esporte-clube"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Boa Esporte Clube"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4038232-operation-manager-project-manager"
+            },
+            "text":"Operation Manager / Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/processfirst"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/processfirst"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Process First"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3545005-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/fx31-labs-ahmedabad-1"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/fx31-labs-ahmedabad-1"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Fx31 Labs Ahmedabad"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3990096-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/ips-tech-2"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/ips-tech-2"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"IPS Tech"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3900687-civil-project-manager"
+            },
+            "text":"Civil Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/zenskar"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/zenskar"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Zenskar"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3976829-associate-product-manager"
+            },
+            "text":"Associate Product Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3909924-technical-project-manager"
+            },
+            "text":"Technical Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3737276-engineering-manager"
+            },
+            "text":"Engineering Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/sightboxstudios"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/sightboxstudios"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Sightbox"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/610593-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/butterfly-network"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/butterfly-network"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Butterfly Network"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4040069-engineering-project-manager"
+            },
+            "text":"Engineering Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3755635-principal-program-manager-asic-embedded-programs"
+            },
+            "text":"Principal Program Manager, ASIC & Embedded Programs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/shopwell-design"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/shopwell-design"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Shopwell Design"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4016096-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/gruve-technology"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/gruve-technology"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Gruve Technology"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/4050950-technical-project-manager"
+            },
+            "text":"Technical Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3910673-cisco-engagement-manager"
+            },
+            "text":"Cisco Engagement Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3891134-manager-people-business-partner-and-operations"
+            },
+            "text":"Manager \u2013 People Business Partner and Operations"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/gary-natoli-1"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/gary-natoli-1"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Gary Natoli"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3967428-data-analyst-project-manager"
+            },
+            "text":"Data Analyst & Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/blockstream"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/blockstream"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Blockstream"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3835334-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3835333-project-manager"
+            },
+            "text":"Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3835324-delivery-project-manager"
+            },
+            "text":"Delivery Project Manager"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"content-center",
+               "href":"https://wellfound.com/company/pulley-7"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline focus:no-underline",
+               "href":"https://wellfound.com/company/pulley-7"
+            },
+            "children":[
+               {
+                  "tag":"h2",
+                  "text":"Pulley"
+               }
+            ]
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3642894-project-manager-permitting-texas"
+            },
+            "text":"Project Manager, Permitting [Texas]"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3277722-associate-project-manager-permitting"
+            },
+            "text":"Associate Project Manager, Permitting"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"hover:underline",
+               "href":"https://wellfound.com/jobs/3277720-project-manager-permitting"
+            },
+            "text":"Project Manager, Permitting"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-current":"true",
+               "aria-label":"Page 1, current page",
+               "href":"https://wellfound.com/role/project-manager"
+            },
+            "text":"1"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 2",
+               "href":"https://wellfound.com/role/project-manager?page=2"
+            },
+            "text":"2"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 3",
+               "href":"https://wellfound.com/role/project-manager?page=3"
+            },
+            "text":"3"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 4",
+               "href":"https://wellfound.com/role/project-manager?page=4"
+            },
+            "text":"4"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 5",
+               "href":"https://wellfound.com/role/project-manager?page=5"
+            },
+            "text":"5"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 18",
+               "href":"https://wellfound.com/role/project-manager?page=18"
+            },
+            "text":"18"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 19",
+               "href":"https://wellfound.com/role/project-manager?page=19"
+            },
+            "text":"19"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 20",
+               "href":"https://wellfound.com/role/project-manager?page=20"
+            },
+            "text":"20"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Go to page 37",
+               "href":"https://wellfound.com/role/project-manager?page=37"
+            },
+            "text":"37"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "aria-label":"Next page",
+               "href":"https://wellfound.com/role/project-manager?page=2"
+            },
+            "text":"Next"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/san-francisco"
+            },
+            "text":"San Francisco"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/los-angeles"
+            },
+            "text":"Los Angeles"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/boston"
+            },
+            "text":"Boston"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/chicago"
+            },
+            "text":"Chicago"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/seattle"
+            },
+            "text":"Seattle"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/austin"
+            },
+            "text":"Austin"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/new-york"
+            },
+            "text":"New York"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/denver"
+            },
+            "text":"Denver"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/l/project-manager/district-of-columbia"
+            },
+            "text":"District of Columbia"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/full-stack-web-developer"
+            },
+            "text":"Full Stack Web Developer Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/smart-contract"
+            },
+            "text":"Smart Contract Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/machine-learning-scientist"
+            },
+            "text":"Machine Learning Scientist Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/linux-developer"
+            },
+            "text":"Linux Developer Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/it-consultant"
+            },
+            "text":"IT Consultant Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/kotlin"
+            },
+            "text":"Kotlin Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/business-consultant"
+            },
+            "text":"Business Consultant Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/application-security-engineer"
+            },
+            "text":"Application Security Engineer Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/rust-programming"
+            },
+            "text":"Rust Programming Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/perl-developer"
+            },
+            "text":"Perl Developer Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/accounting-data-analyst"
+            },
+            "text":"Accounting Data Analyst Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/openshift"
+            },
+            "text":"OpenShift Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/help-desk-support"
+            },
+            "text":"Help Desk Support Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/microservices"
+            },
+            "text":"Microservices Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/r/scrum-master"
+            },
+            "text":"Scrum Master Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/full-stack-web-developer"
+            },
+            "text":"Full Stack Web Developer"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/smart-contract"
+            },
+            "text":"Smart Contract"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/machine-learning-scientist"
+            },
+            "text":"Machine Learning Scientist"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/linux-developer"
+            },
+            "text":"Linux Developer"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/it-consultant"
+            },
+            "text":"IT Consultant"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/kotlin"
+            },
+            "text":"Kotlin"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/business-consultant"
+            },
+            "text":"Business Consultant"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/application-security-engineer"
+            },
+            "text":"Application Security Engineer"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/rust-programming"
+            },
+            "text":"Rust Programming"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/perl-developer"
+            },
+            "text":"Perl Developer"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/accounting-data-analyst"
+            },
+            "text":"Accounting Data Analyst"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/openshift"
+            },
+            "text":"OpenShift"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/help-desk-support"
+            },
+            "text":"Help Desk Support"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/microservices"
+            },
+            "text":"Microservices"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_anchor__D_RPR",
+               "href":"https://wellfound.com/role/scrum-master"
+            },
+            "text":"Scrum Master"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/20-companies-building-our-remote-first-future",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote First Future Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/companies-that-hire-coding-bootcamp-graduates",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs for Bootcamp Grads"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/junior-software-engineer-jobs",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Junior Software Engineer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/x-crypto-startups-to-watch-out-for-in-2022",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Crypto Startups To Watch Out For"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/hot-blockchain-startups-that-are-hiring",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Blockchain Startups That Are Hiring"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/6-companies-hiring-top-tech-talent-amidst-2022-layoffs",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Companies Hiring Amidst Layoffs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/50-hot-consumer-fintech-startups",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Hot Consumer Fintech Startups"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/yc-startups-that-are-aggressively-hiring",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Y Combinator Startup Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/fastest-growing-startups-in-san-francisco-hiring-now",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Startup Jobs in Bay Area"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections/12-women-led-startups-expanding-their-remote-teams-in-2022",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Top Women-Led Startups"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/job-collections",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"More Featured Lists"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/software-engineer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Software Engineer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/product-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Product Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/data-analyst",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Data Analyst Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/product-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Product Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/graphic-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Graphic Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/ui-ux-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote UI/UX Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/operations-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Operations Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/growth-marketer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Growth Marketer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/account-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Account Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/sales-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Sales Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/financial-analyst",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote Financial Analyst Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/r/hr-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Remote HR Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/remote",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"More Remote Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/new-york",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in New York City"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/san-francisco",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in San Francisco"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/austin",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Austin"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/boston",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Boston"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/district-of-columbia",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Washington DC"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/denver",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Denver"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/seattle",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Seattle"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/chicago",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in Chicago"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/india",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Jobs in India"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/location/united-states",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"More Jobs by Location"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/software-engineer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Software Engineer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/product-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Product Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/data-analyst",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Data Analyst Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/product-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Product Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/graphic-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Graphic Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/ui-ux-designer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"UI/UX Designer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/operations-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Operations Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/growth-marketer",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Growth Marketer Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/account-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Account Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/sales-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Sales Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/financial-analyst",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Financial Analyst Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/hr-manager",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"HR Manager Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/software-engineer/san-francisco",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Software Engineer Jobs in San Francisco"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/software-engineer/new-york",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Software Engineer Jobs in New York City"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/software-engineer/los-angeles",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Software Engineer Jobs in Los Angeles"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/product-manager/san-francisco",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Product Manager Jobs in San Francisco"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/product-manager/new-york",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Product Manager Jobs in New York City"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/product-manager/los-angeles",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Product Manager Jobs in Los Angeles"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/frontend-engineer/san-francisco",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Frontend Developer Jobs in San Francisco"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/frontend-engineer/new-york",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Frontend Developer Jobs in New York City"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-dark-aaaa group-hover:!text-gtmblue-500",
+               "href":"https://wellfound.com/role/l/frontend-engineer/los-angeles",
+               "rel":"noopener noreferrer",
+               "target":"_blank"
+            },
+            "text":"Frontend Developer Jobs in Los Angeles"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"md:pl-0",
+               "href":"https://wellfound.com/"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "href":"http://twitter.com/wellfoundhq",
+               "rel":"noreferrer nofollow",
+               "target":"_blank"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "href":"https://instagram.com/wellfoundhq",
+               "rel":"noreferrer nofollow",
+               "target":"_blank"
+            }
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/candidates/overview"
+            },
+            "text":"Overview"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/jobs"
+            },
+            "text":"Startup Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/web3"
+            },
+            "text":"Web3 Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/candidates/featured"
+            },
+            "text":"Featured"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/hiring-data"
+            },
+            "text":"Startup Hiring Data"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/startups"
+            },
+            "text":"Tech Startups"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/candidates/remote"
+            },
+            "text":"Remote"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/recruit/overview"
+            },
+            "text":"Overview"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/recruit/products/recruit-pro"
+            },
+            "text":"Recruit Pro"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/recruit/products/curated"
+            },
+            "text":"Curated"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/recruit/products/recruiter-cloud"
+            },
+            "text":"Wellfound:ai"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/hire"
+            },
+            "text":"Hire Developers"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/recruit/pricing"
+            },
+            "text":"Pricing"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com"
+            },
+            "text":"About"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://help.wellfound.com/"
+            },
+            "text":"Help"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/discover/blog"
+            },
+            "text":"Blog"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/terms"
+            },
+            "text":"Terms & Risks"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://wellfound.com/privacy"
+            },
+            "text":"Privacy & Cookies"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://trust.wellfound.ai"
+            },
+            "text":"Trust"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"!text-black hover:text-gtmblue-500 hover:underline",
+               "href":"https://status.wellfound.com"
+            },
+            "text":"Platform Status"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "data-ccm-link":"preferences"
+            },
+            "text":"Cookie Preferences"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/tech-jobs"
+            },
+            "text":"Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/remote-tech-jobs"
+            },
+            "text":"Remote Jobs"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/tech-job-locations"
+            },
+            "text":"Locations"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/tech-startups"
+            },
+            "text":"Startups"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/startups-hiring"
+            },
+            "text":"Startups Hiring"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/tech-industries"
+            },
+            "text":"Industries"
+         },
+         {
+            "tag":"a",
+            "attributes":{
+               "class":"styles_component__UCLp3 styles_defaultLink__eZMqw !text-black hover:text-gtmblue-500 hover:underline underline",
+               "href":"https://wellfound.com/browse/tech-hubs"
+            },
+            "text":"Tech Hubs"
+         }]

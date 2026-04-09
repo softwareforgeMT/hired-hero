@@ -1,0 +1,25 @@
+.alert-danger, {
+    color: #FFF;
+    background-color: #FF0000;
+    border-color: #FF012A;
+}
+.StripeElement {
+    box-sizing: border-box;
+    height: calc(2.75rem + 2px);
+    padding: 14px 18px;
+/*    background-color: white;*/
+    transition: box-shadow .15s ease;
+    border: 1px solid var(--vz-input-border);
+    margin-bottom: 10px;
+    border-radius: 0.25rem;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+.display-none{
+    display: none;
+}
+#card-errors{
+    color:#fa755a ;
+}

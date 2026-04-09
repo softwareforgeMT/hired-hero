@@ -1,0 +1,45 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # =========================
+    #   BLOCK BAD / FAKE BOTS
+    # =========================
+    # Known bad scrapers & spam bots
+    RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot|DotBot|BLEXBot|DataForSeoBot|GPTBot|CensysInspect|python-requests|curl|wget|Go-http-client) [NC]
+    RewriteRule ^ - [F,L]
+
+    # Block empty user agents (almost always bots)
+    RewriteCond %{HTTP_USER_AGENT} ^$
+    RewriteRule ^ - [F,L]
+
+</IfModule>
+
+# =========================
+#   OPTIONAL: RATE LIMIT (if mod_evasive is available)
+# =========================
+<IfModule mod_evasive20.c>
+    DOSHashTableSize 3097
+    DOSPageCount 5
+    DOSPageInterval 1
+    DOSSiteCount 20
+    DOSSiteInterval 1
+    DOSEmailNotify hiredheroai@gmail.com
+</IfModule>
