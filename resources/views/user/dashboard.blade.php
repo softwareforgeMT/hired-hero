@@ -423,7 +423,16 @@
                         </div>
                     </div>
                     @if($totalApplications > 0)
-                       
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <small class="text-muted">In Progress:</small>
+                                <p class="mb-0"><strong class="text-warning">{{ $applicationsInProgress }}</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted">Offered:</small>
+                                <p class="mb-0"><strong class="text-success">{{ $applicationsOffered }}</strong></p>
+                            </div>
+                        </div>
                     @else
                         <p class="text-muted mb-0">No applications yet. Start applying to jobs!</p>
                     @endif

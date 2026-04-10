@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\UserLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
@@ -52,10 +53,20 @@ class RegisterController extends Controller
             ->first();
 
         $request->validate([
-            'name'           => 'required|unique:users',
-            'email'          => 'required|email|unique:users',
-            'password'       => 'required|confirmed',
-            'referral_code'  => 'nullable|string|exists:users,affiliate_code'
+            'name'                  => 'required|unique:users',
+            'email'                 => 'required|email|unique:users',
+            'password'              => 'required|confirmed',
+            'referral_code'         => 'nullable|string|exists:users,affiliate_code',
+            'g-recaptcha-response'  => ['required', function ($attribute, $value, $fail) {
+                $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+                    'secret' => env('RECAPTCHA_SECRET'),
+                    'response' => $value,
+                ]);
+
+                if (!$response->json('success')) {
+                    $fail('Captcha verification failed, please try again.');
+                }
+            }]
         ], [
             'name.unique' => 'The username has already been taken.',
         ]);

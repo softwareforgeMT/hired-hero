@@ -39,7 +39,7 @@
         <h2 class="step-title mb-3">Select Your Target Roles</h2>
         <p class="step-description">Choose up to 4 roles you're interested in. Our AI suggests roles based on your profile.</p>
     </div>
-    <form action="{{ route('placement.wizard.submit', ['step' => 8]) }}" method="POST">
+    <form id="step8Form" method="POST" data-step="8">
         @csrf
 
         <!-- AI Suggested Roles -->
@@ -166,19 +166,19 @@
         </div>
     </form>
 
-    <!-- Progress Modal (Hidden initially) -->
+    <!-- Background Job Scraping Progress Modal -->
     <div class="modal fade" id="scrapingProgressModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="scrapingProgressLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header border-0 pb-0">
                     <h5 class="modal-title" id="scrapingProgressLabel">
-                        <i class="ri-loader-4-line me-2" style="animation: spin 1s linear infinite;"></i>
-                        Finding Jobs For You
+                        <i class="ri-loader-4-line me-2 spinning"></i>
+                        <span id="modalTitle">Finding Jobs For You</span>
                     </h5>
                 </div>
                 <div class="modal-body">
                     <div class="scraping-status">
-                        <p id="statusMessage" class="text-muted mb-3">Initializing job scraping...</p>
+                        <p id="statusMessage" class="text-muted mb-3">Initializing job search...</p>
                     </div>
                     
                     <!-- Main Progress Bar -->
@@ -187,29 +187,30 @@
                             <span class="fw-semibold">Overall Progress</span>
                             <span id="progressPercent" class="badge bg-primary">0%</span>
                         </label>
-                        <div class="progress" style="height: 6px;">
+                        <div class="progress" style="height: 8px;">
                             <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
                         </div>
                     </div>
 
-                    <!-- Role Information -->
-                    <div class="alert alert-info mt-3" id="roleAlert" style="display: none;">
-                        <div class="mb-2">
-                            <strong id="currentRoleText">Processing role...</strong>
-                        </div>
-                        <small id="roleIndexText" class="text-muted"></small>
-                        <br/>
-                        <small id="jobsCollectedText" class="text-muted d-block mt-2"></small>
+                    <!-- Job Count -->
+                    <div class="alert alert-info mt-3 mb-0" id="jobCountAlert" style="display: none;">
+                        <i class="ri-information-line me-2"></i>
+                        <span><strong id="totalJobs">0</strong> job matches found so far</span>
                     </div>
 
                     <!-- Error Message -->
-                    <div class="alert alert-danger mt-3" id="errorAlert" style="display: none;">
+                    <div class="alert alert-danger mt-3 mb-0" id="errorAlert" style="display: none;">
                         <i class="ri-error-warning-line me-2"></i>
                         <span id="errorMessage">An error occurred</span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="closeBtn" style="display: none;">Close</button>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary" id="previewMatchesBtn" style="display: none;" onclick="goToJobMatches()">
+                        <i class="ri-arrow-right-line me-2"></i> Preview Matches
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="dashboardBtn" style="display: none;" onclick="goToDashboard()">
+                        <i class="ri-home-line me-2"></i> Go to Dashboard
+                    </button>
                 </div>
             </div>
         </div>
@@ -455,6 +456,20 @@
         box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
     }
 
+    /* Loading spinner animation */
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .spinning {
+        animation: spin 1s linear infinite;
+    }
+
     /* Upsell Banner */
     .upsell-banner {
         background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
@@ -573,7 +588,7 @@
 </style>
 
 <script>
-    const form = document.querySelector('form');
+    const form = document.getElementById('step8Form');
     const submitBtn = document.getElementById('submitBtn');
     const selectedCountDisplay = document.getElementById('selectedCount');
     const selectedLabel = document.getElementById('selectedLabel');
@@ -673,14 +688,242 @@
     // Initialize count
     updateSelectionCount();
 
-    // Form validation
-    form.addEventListener('submit', function(e) {
-        const checkedRoles = document.querySelectorAll('input[name="selected_roles[]"]:checked').length;
-        if (checkedRoles === 0) {
-            e.preventDefault();
+    // Form validation and background job submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log('Form submit event triggered');
+
+        const checkedRoles = document.querySelectorAll('input[name="selected_roles[]"]:checked');
+        const selectedRoles = Array.from(checkedRoles).map(checkbox => checkbox.value);
+
+        if (selectedRoles.length === 0) {
             alert('Please select at least one role to continue');
             return false;
         }
+
+        // Show the progress modal
+        const modal = new bootstrap.Modal(document.getElementById('scrapingProgressModal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        modal.show();
+
+        try {
+            // First, save the roles to the profile via the controller
+            console.log('Saving roles to profile...');
+            
+            const csrfToken = document.querySelector('input[name="_token"]').value;
+            
+            const saveResponse = await fetch('{{ route("placement.wizard.submit", ["step" => 8]) }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({
+                    selected_roles: selectedRoles
+                })
+            });
+
+            if (!saveResponse.ok) {
+                throw new Error(`Failed to save roles: ${saveResponse.status}`);
+            }
+
+            const saveData = await saveResponse.json();
+            console.log('Save response:', saveData);
+            
+            if (!saveData.success) {
+                throw new Error(saveData.error || 'Failed to save roles');
+            }
+
+            // Now start the background scraping job
+            console.log('Starting background scraping job...');
+            
+            const response = await fetch('{{ route("placement.scraping.start") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({
+                    selected_roles: selectedRoles
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('API response:', data);
+            
+            if (!data.success) {
+                throw new Error(data.message || 'Failed to start job scraping');
+            }
+
+            console.log('Scraping job initiated. Starting progress polling...');
+            
+            // Update initial message
+            document.getElementById('statusMessage').textContent = 'Initializing job scraper...';
+            
+            // Start polling for progress
+            startPollingProgress();
+
+        } catch (error) {
+            console.error('Error during setup:', error);
+            document.getElementById('errorAlert').style.display = 'block';
+            document.getElementById('errorMessage').textContent = error.message || 'Failed to complete setup';
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('progressPercent').textContent = '0%';
+        }
     });
+
+    // Poll for scraping progress
+    let pollingInterval = null;
+    let maxPollingAttempts = 1800; // 30 minutes with 2 second intervals
+    let currentAttempts = 0;
+    let lastProgress = 0;
+    let noProgressCount = 0; // Track how many times we see no progress change
+
+    function startPollingProgress() {
+        currentAttempts = 0;
+        lastProgress = 0;
+        noProgressCount = 0;
+        pollingInterval = setInterval(pollProgress, 2000); // Poll every 2 seconds
+        // Also do first poll immediately
+        pollProgress();
+    }
+
+    async function pollProgress() {
+        try {
+            currentAttempts++;
+
+            if (currentAttempts > maxPollingAttempts) {
+                clearInterval(pollingInterval);
+                document.getElementById('errorAlert').style.display = 'block';
+                document.getElementById('errorMessage').textContent = 'Job scraping timed out. Please try again.';
+                document.getElementById('statusMessage').textContent = 'Timeout occurred.';
+                return;
+            }
+
+            const response = await fetch('{{ route("placement.scraping.progress") }}', {
+                headers: {
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+
+            if (!response.ok) {
+                console.warn(`Progress fetch failed: ${response.status}`);
+                return;
+            }
+
+            const data = await response.json();
+            console.log(`Poll attempt ${currentAttempts}: Progress=${data.progress}%, Status=${data.status}, Message=${data.message}`);
+            
+            updateProgressDisplay(data);
+
+            // Track if progress is updating
+            if (data.progress === lastProgress) {
+                noProgressCount++;
+            } else {
+                noProgressCount = 0;
+                lastProgress = data.progress;
+            }
+
+            // Check if completed or failed
+            if (data.status === 'completed') {
+                clearInterval(pollingInterval);
+                console.log('Scraping completed successfully');
+                showCompletedState(data);
+            } else if (data.status === 'failed') {
+                clearInterval(pollingInterval);
+                console.log('Scraping failed');
+                showFailedState(data);
+            }
+
+        } catch (error) {
+            console.error('Error polling progress:', error);
+            // Continue polling even on error unless too many in a row
+        }
+    }
+
+    function updateProgressDisplay(data) {
+        // Update progress bar
+        document.getElementById('progressBar').style.width = data.progress + '%';
+        document.getElementById('progressPercent').textContent = data.progress + '%';
+
+        // Update status message with more details
+        let messageText = data.message || 'Processing...';
+        if (data.status === 'processing') {
+            messageText = `${messageText} (${data.progress}%)`;
+        }
+        document.getElementById('statusMessage').textContent = messageText;
+
+        // Update job count if available
+        if (data.total_jobs > 0) {
+            document.getElementById('jobCountAlert').style.display = 'block';
+            document.getElementById('totalJobs').textContent = data.total_jobs;
+        }
+    }
+
+    function showCompletedState(data) {
+        // Update modal title
+        document.getElementById('modalTitle').textContent = 'Jobs Found!';
+        
+        // Show job count in completion message
+        const jobCountText = data.total_jobs > 0 ? ` Found ${data.total_jobs} matching jobs!` : '';
+        document.getElementById('statusMessage').textContent = 'Job search completed successfully!' + jobCountText;
+        document.getElementById('progressBar').style.width = '100%';
+        document.getElementById('progressPercent').textContent = '100%';
+
+        // Hide message and show action buttons
+        document.getElementById('statusMessage').style.fontWeight = '500';
+        document.getElementById('statusMessage').style.color = '#10b981';
+
+        // Remove spinning animation
+        const spinner = document.querySelector('.spinning');
+        if (spinner) {
+            spinner.style.animation = 'none';
+            spinner.textContent = '\uea10'; // checkmark icon
+            spinner.style.color = '#10b981';
+        }
+
+        // Show preview button
+        document.getElementById('previewMatchesBtn').style.display = 'inline-block';
+        document.getElementById('dashboardBtn').style.display = 'inline-block';
+    }
+
+    function showFailedState(data) {
+        // Update modal title
+        document.getElementById('modalTitle').textContent = 'Scraping Failed';
+        document.getElementById('statusMessage').textContent = data.message || 'An error occurred while scraping jobs';
+        document.getElementById('statusMessage').style.color = '#dc2626';
+
+        // Remove spinning animation
+        const spinner = document.querySelector('.spinning');
+        if (spinner) {
+            spinner.style.animation = 'none';
+            spinner.style.color = '#dc2626';
+        }
+
+        // Show error
+        document.getElementById('errorAlert').style.display = 'block';
+        document.getElementById('errorMessage').textContent = data.message || 'Failed to scrape jobs';
+    }
+
+    function goToJobMatches() {
+        window.location.href = '{{ route("placement.jobs.index") }}';
+    }
+
+    function goToDashboard() {
+        window.location.href = '{{ route("user.dashboard") }}';
+    }
 </script>
 @endsection

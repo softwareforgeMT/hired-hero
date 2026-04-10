@@ -1197,6 +1197,14 @@
         if (option !== 'existing') {
             selectedResumeId = null;
             selectedResumeDownloadUrl = null;
+            
+            // Clear the visual selection
+            document.querySelectorAll('input[name="existing_resume_id"]').forEach(input => {
+                input.checked = false;
+            });
+            document.querySelectorAll('.existing-resume-item').forEach(item => {
+                item.classList.remove('active');
+            });
         }
 
         // Update form validation based on selection

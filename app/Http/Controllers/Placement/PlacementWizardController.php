@@ -425,19 +425,22 @@ class PlacementWizardController extends Controller
             $profile->update(['selected_roles' => $validated['selected_roles']]);
             $profile->completeStep(8, $validated);
 
-            // Call the scraper to fetch jobs for selected roles
-            $scraper = app('App\Http\Controllers\ScraperController');
-            $scraperRequest = new \Illuminate\Http\Request();
-            $scraperRequest->merge(['selected_roles' => $validated['selected_roles']]);
-            $scraper->scrape($scraperRequest);
+            // Background job scraping is now handled via API endpoint and queue jobs
+            // The frontend will call /api/scraping/start to initiate background job processing
 
             // Create standardized profile
             $this->standardizedProfile->updateStandardizedProfile($profile);
 
-            return redirect()->route('placement.results.index');
+            return response()->json([
+                'success' => true,
+                'message' => 'Roles saved. Job scraping will begin in the background.'
+            ]);
         } catch (\Exception $e) {
             Log::error('Step 8 submission error: ' . $e->getMessage());
-            return back()->withErrors(['error' => 'An error occurred while generating your job matches. Please try again.']);
+            return response()->json([
+                'success' => false,
+                'error' => 'An error occurred while processing your selection. Please try again.'
+            ], 500);
         }
     }
 

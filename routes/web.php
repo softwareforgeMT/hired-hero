@@ -400,6 +400,15 @@ Route::group(['prefix' => 'placement', 'as' => 'placement.'], function () {
         // Submit built resume to continue to step 7
         Route::post('/wizard/submit-built-resume/{resumeId}', [PlacementWizardController::class, 'submitStep6WithBuiltResume'])->name('wizard.submit-built-resume');
     
+        // Job Scraping Routes (Background Job API)
+        Route::prefix('scraping')->group(function () {
+            Route::post('/start', 'App\Http\Controllers\Api\JobScrapingController@startScraping')->name('scraping.start');
+            Route::get('/progress', 'App\Http\Controllers\Api\JobScrapingController@getProgress')->name('scraping.progress');
+            Route::get('/is-complete', 'App\Http\Controllers\Api\JobScrapingController@isScrappingComplete')->name('scraping.is-complete');
+            Route::get('/queue-status', 'App\Http\Controllers\Api\JobScrapingController@checkQueueStatus')->name('scraping.queue-status');
+            Route::get('/job-matches', 'App\Http\Controllers\Api\JobScrapingController@getJobMatches')->name('scraping.job-matches');
+        });
+    
     // Job matches
     Route::get('/jobs', [JobMatchController::class, 'index'])->name('jobs.index');
     Route::get('/jobs/results', [JobMatchController::class, 'index'])->name('results.index');

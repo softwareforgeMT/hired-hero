@@ -809,7 +809,7 @@ class ScraperController extends Controller
      * Filters tags to extract job links (href contains /jobs/) and associates each with the current company
      * Company is tracked sequentially - each job is paired with the most recent company encountered
      */
-    public function normalizeWellfoundJobData($data): array
+    private function normalizeWellfoundJobData($data): array
     {
         $jobs = [];
         
@@ -888,7 +888,7 @@ class ScraperController extends Controller
      * Normalize WorkDay job data from HTML
      * Extracts: job title, link, location, and posted date from HTML structure
      */
-    public function normalizeWorkdayJobData(string $html): array
+    private function normalizeWorkdayJobData(string $html): array
     {
         $jobs = [];
         

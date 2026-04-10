@@ -237,9 +237,14 @@
         pageLoaderOverlay.classList.remove('active');
     }
 
-    // Show loading overlay on form submission
+    // Show loading overlay on form submission (except step 8)
     document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', function() {
+        form.addEventListener('submit', function(e) {
+            // Skip loading overlay for step 8 (task has custom handling)
+            if (form.dataset.step === '8') {
+                return;
+            }
+            
             showLoadingOverlay();
             const submitBtn = form.querySelector('button[type="submit"]');
             if (submitBtn) {
