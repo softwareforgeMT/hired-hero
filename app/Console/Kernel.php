@@ -42,6 +42,18 @@ class Kernel extends ConsoleKernel
             ->weeklyOn(1, '09:00') // 1 = Monday
             ->timezone('UTC');
 
+        // Automated weekly portal stress test
+        $schedule->command('portal:stress-test')
+            ->weeklyOn(
+                (int) config('stress-test.schedule_day', 0),
+                (string) config('stress-test.schedule_time', '03:00')
+            )
+            ->timezone((string) config('stress-test.schedule_timezone', 'UTC'))
+            ->withoutOverlapping()
+            ->when(function () {
+                return (bool) config('stress-test.enabled', true);
+            });
+
         // $schedule->command('inspire')->hourly();
     }
 
