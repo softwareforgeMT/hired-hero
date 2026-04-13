@@ -378,4 +378,4 @@
     .collapse {
         visibility: visible;
     }
-</style><?php /**PATH D:\Herd-Projects\HiredHero-Job-Match\resources\views/front/layouts/navbar.blade.php ENDPATH**/ ?>
+</style><?php /**PATH C:\xampp\htdocs\hired-hero\resources\views/front/layouts/navbar.blade.php ENDPATH**/ ?>

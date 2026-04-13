@@ -12,4 +12,4 @@
 
 <link href="<?php echo e(URL::asset('assets/custom.css?version=2')); ?>"  rel="stylesheet" type="text/css" />
 
-<?php /**PATH D:\Herd-Projects\HiredHero-Job-Match\resources\views/front/layouts/head-css.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\hired-hero\resources\views/front/layouts/head-css.blade.php ENDPATH**/ ?>

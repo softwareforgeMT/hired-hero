@@ -13,4 +13,4 @@
 
 <?php echo $__env->yieldContent('script'); ?>
 <?php echo $__env->yieldContent('script-bottom'); ?>
-<?php /**PATH D:\Herd-Projects\HiredHero-Job-Match\resources\views/front/layouts/vendor-scripts.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\hired-hero\resources\views/front/layouts/vendor-scripts.blade.php ENDPATH**/ ?>

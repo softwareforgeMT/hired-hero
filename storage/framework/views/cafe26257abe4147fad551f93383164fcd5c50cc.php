@@ -109,4 +109,4 @@
 <?php echo $__env->yieldPushContent('js'); ?>
 
 </html>
-<?php /**PATH D:\Herd-Projects\HiredHero-Job-Match\resources\views/front/layouts/app.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\hired-hero\resources\views/front/layouts/app.blade.php ENDPATH**/ ?>

@@ -1,0 +1,1 @@
+<h2>Coming Soon</h2><?php /**PATH C:\xampp\htdocs\hired-hero\resources\views/front/comingsoon.blade.php ENDPATH**/ ?>
