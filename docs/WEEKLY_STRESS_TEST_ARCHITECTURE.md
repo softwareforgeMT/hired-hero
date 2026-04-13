@@ -30,6 +30,7 @@ The implementation follows a command-driven scheduled workflow:
 - Responsibility: Executes the complete load test lifecycle.
 - Key functions:
   - `resolveSettings()`: Reads runtime config/env/options.
+  - `discoverRouteTargets()`: Auto-discovers safe GET/HEAD routes for all-routes mode.
   - `runTargetStressTest()`: Sends concurrent requests and captures metrics.
   - `buildSummary()`: Aggregates global metrics and final pass/fail.
   - `storeReport()`: Persists JSON report.
@@ -39,10 +40,18 @@ The implementation follows a command-driven scheduled workflow:
 - File: `config/stress-test.php`
 - Responsibility: Centralized tuning for targets, load profile, thresholds, schedule, report location, and alert recipients.
 - Design choice: No hardcoded production values inside command logic.
+- Includes route discovery controls:
+  - `STRESS_TEST_DISCOVER_ROUTES`
+  - `STRESS_TEST_EXCLUDE_ROUTE_PATTERNS`
+  - `STRESS_TEST_MAX_DISCOVERED_TARGETS`
 
 4. Operations runbook
 - File: `docs/WEEKLY_STRESS_TESTING.md`
 - Responsibility: Manual execution commands, environment variables, and report location.
+
+5. Detailed execution plan
+- File: `docs/STRESS_TEST_EXECUTION_PLAN_ALL_ROUTES.md`
+- Responsibility: PDF-style phase plan for all-routes stress testing and client reporting.
 
 ## Ownership Model (Who Is Who)
 

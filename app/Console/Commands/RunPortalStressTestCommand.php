@@ -8,6 +8,7 @@ use GuzzleHttp\Pool;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -23,7 +24,9 @@ class RunPortalStressTestCommand extends Command
                             {--concurrency= : Number of concurrent requests}
                             {--timeout= : Request timeout in seconds}
                             {--targets=* : Absolute URL(s) or relative path(s) to test}
-                            {--base-url= : Base URL used for relative targets}';
+                            {--base-url= : Base URL used for relative targets}
+                            {--discover-routes : Auto-discover safe GET/HEAD routes from Laravel routing table}
+                            {--list-routes-only : Print resolved stress test targets and exit}';
 
     /**
      * The console command description.
@@ -48,9 +51,18 @@ class RunPortalStressTestCommand extends Command
         $settings = $this->resolveSettings();
 
         if (empty($settings['targets'])) {
-            $this->error('No stress test targets configured. Set STRESS_TEST_TARGETS or pass --targets.');
+            $this->error('No stress test targets configured. Set STRESS_TEST_TARGETS or use --discover-routes.');
 
             return 1;
+        }
+
+        if ((bool) $this->option('list-routes-only')) {
+            $this->info('Resolved stress test targets: '.count($settings['targets']));
+            foreach ($settings['targets'] as $target) {
+                $this->line('- '.$target);
+            }
+
+            return 0;
         }
 
         $this->info('Starting weekly portal stress test...');
@@ -58,6 +70,15 @@ class RunPortalStressTestCommand extends Command
         $this->line("Requests per target: {$settings['requests']}");
         $this->line("Concurrency: {$settings['concurrency']}");
         $this->line("Timeout: {$settings['timeout']}s");
+
+        if (!empty($settings['route_discovery']) && !empty($settings['route_discovery']['enabled'])) {
+            $this->line(
+                'Route discovery: discovered '.$settings['route_discovery']['discovered_count']
+                .', skipped dynamic '.$settings['route_discovery']['skipped_dynamic_count']
+                .', skipped excluded '.$settings['route_discovery']['skipped_excluded_count']
+                .($settings['route_discovery']['truncated'] ? ', list truncated by max target limit' : '')
+            );
+        }
 
         $startedAt = now();
         $startedAtTime = microtime(true);
@@ -152,17 +173,39 @@ class RunPortalStressTestCommand extends Command
 
         $providedTargets = $this->option('targets');
         $configuredTargets = config('stress-test.targets', []);
-        $targets = !empty($providedTargets) ? $providedTargets : $configuredTargets;
+        $manualTargets = !empty($providedTargets) ? $providedTargets : $configuredTargets;
+
+        $resolvedTargets = $this->normalizeTargets($manualTargets, $baseUrl);
+
+        $routeDiscoveryEnabled = (bool) ($this->option('discover-routes') || config('stress-test.discover_routes', false));
+        $routeDiscoveryMeta = [
+            'enabled' => $routeDiscoveryEnabled,
+            'discovered_count' => 0,
+            'skipped_dynamic_count' => 0,
+            'skipped_excluded_count' => 0,
+            'truncated' => false,
+        ];
+
+        if ($routeDiscoveryEnabled) {
+            $discovery = $this->discoverRouteTargets($baseUrl);
+            $resolvedTargets = array_values(array_unique(array_merge($resolvedTargets, $discovery['targets'])));
+
+            $routeDiscoveryMeta['discovered_count'] = $discovery['discovered_count'];
+            $routeDiscoveryMeta['skipped_dynamic_count'] = $discovery['skipped_dynamic_count'];
+            $routeDiscoveryMeta['skipped_excluded_count'] = $discovery['skipped_excluded_count'];
+            $routeDiscoveryMeta['truncated'] = $discovery['truncated'];
+        }
 
         return [
             'base_url' => $baseUrl,
-            'targets' => $this->normalizeTargets($targets, $baseUrl),
+            'targets' => $resolvedTargets,
             'requests' => $requests,
             'concurrency' => $concurrency,
             'timeout' => $timeout,
             'verify_tls' => (bool) config('stress-test.verify_tls', true),
             'max_error_rate_percent' => (float) config('stress-test.max_error_rate_percent', 3),
             'max_avg_response_ms' => (float) config('stress-test.max_avg_response_ms', 2000),
+            'route_discovery' => $routeDiscoveryMeta,
         ];
     }
 
@@ -193,6 +236,99 @@ class RunPortalStressTestCommand extends Command
         }
 
         return array_values(array_unique($normalized));
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    protected function discoverRouteTargets($baseUrl)
+    {
+        $includeApiRoutes = (bool) config('stress-test.include_api_routes', false);
+        $excludePatterns = config('stress-test.exclude_route_patterns', []);
+        $maxTargets = max(1, (int) config('stress-test.max_discovered_targets', 250));
+
+        $targets = [];
+        $skippedDynamic = 0;
+        $skippedExcluded = 0;
+        $trimmedBaseUrl = rtrim((string) $baseUrl, '/');
+
+        foreach (Route::getRoutes() as $route) {
+            $methods = $route->methods();
+            if (!in_array('GET', $methods, true) && !in_array('HEAD', $methods, true)) {
+                continue;
+            }
+
+            $uri = '/'.ltrim((string) $route->uri(), '/');
+            if ($uri === '//') {
+                $uri = '/';
+            }
+
+            $uriWithoutLeadingSlash = ltrim($uri, '/');
+
+            if (!$includeApiRoutes && Str::startsWith($uriWithoutLeadingSlash, 'api/')) {
+                $skippedExcluded++;
+                continue;
+            }
+
+            if (Str::contains($uri, ['{', '}'])) {
+                $skippedDynamic++;
+                continue;
+            }
+
+            if ($this->isRouteExcluded($uriWithoutLeadingSlash, $excludePatterns)) {
+                $skippedExcluded++;
+                continue;
+            }
+
+            if ($trimmedBaseUrl === '') {
+                continue;
+            }
+
+            $targets[] = $uri === '/' ? $trimmedBaseUrl.'/' : $trimmedBaseUrl.'/'.ltrim($uri, '/');
+        }
+
+        $targets = array_values(array_unique($targets));
+        $truncated = false;
+
+        if (count($targets) > $maxTargets) {
+            $targets = array_slice($targets, 0, $maxTargets);
+            $truncated = true;
+        }
+
+        return [
+            'targets' => $targets,
+            'discovered_count' => count($targets),
+            'skipped_dynamic_count' => $skippedDynamic,
+            'skipped_excluded_count' => $skippedExcluded,
+            'truncated' => $truncated,
+        ];
+    }
+
+    /**
+     * @param  array<int, string>  $patterns
+     * @return bool
+     */
+    protected function isRouteExcluded($uriWithoutLeadingSlash, array $patterns)
+    {
+        foreach ($patterns as $pattern) {
+            $pattern = trim((string) $pattern);
+            if ($pattern === '') {
+                continue;
+            }
+
+            if (Str::endsWith($pattern, '/*')) {
+                $prefix = rtrim(substr($pattern, 0, -2), '/');
+                if ($uriWithoutLeadingSlash === $prefix || Str::startsWith($uriWithoutLeadingSlash, $prefix.'/')) {
+                    return true;
+                }
+            }
+
+            if (Str::is($pattern, $uriWithoutLeadingSlash) || Str::is($pattern, '/'.$uriWithoutLeadingSlash)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

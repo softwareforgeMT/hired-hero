@@ -26,6 +26,13 @@ return [
         'STRESS_TEST_TARGETS',
         '/,/login,/register'
     ))))),
+    'discover_routes' => env('STRESS_TEST_DISCOVER_ROUTES', false),
+    'include_api_routes' => env('STRESS_TEST_INCLUDE_API_ROUTES', false),
+    'max_discovered_targets' => (int) env('STRESS_TEST_MAX_DISCOVERED_TARGETS', 250),
+    'exclude_route_patterns' => array_values(array_filter(array_map('trim', explode(',', (string) env(
+        'STRESS_TEST_EXCLUDE_ROUTE_PATTERNS',
+        '_debugbar/*,_ignition/*,sanctum/*,broadcasting/*,admin/*,user/*,api/*,oauth/*,auth/*,stripe/*,webhooks/*,horizon/*,telescope/*'
+    ))))),
 
     /*
     |--------------------------------------------------------------------------
