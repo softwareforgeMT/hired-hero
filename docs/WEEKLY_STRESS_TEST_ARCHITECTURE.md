@@ -53,6 +53,11 @@ The implementation follows a command-driven scheduled workflow:
 - File: `docs/STRESS_TEST_EXECUTION_PLAN_ALL_ROUTES.md`
 - Responsibility: PDF-style phase plan for all-routes stress testing and client reporting.
 
+6. Advanced k6 suite
+- File: `scripts/k6/stress-test.js`
+- Usage guide: `docs/K6_STRESS_TESTING.md`
+- Responsibility: High-fidelity external load testing with threshold-enforced exit status and JSON summary export.
+
 ## Ownership Model (Who Is Who)
 
 1. Product/Client owner
