@@ -43,6 +43,7 @@ return [
     'concurrency' => (int) env('STRESS_TEST_CONCURRENCY', 25),
     'timeout_seconds' => (float) env('STRESS_TEST_TIMEOUT_SECONDS', 10),
     'verify_tls' => env('STRESS_TEST_VERIFY_TLS', true),
+    'api_token' => env('STRESS_TEST_API_TOKEN', ''),
 
     /*
     |--------------------------------------------------------------------------

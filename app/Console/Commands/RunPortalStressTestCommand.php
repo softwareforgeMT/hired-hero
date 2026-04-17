@@ -94,7 +94,8 @@ class RunPortalStressTestCommand extends Command
                 $settings['timeout'],
                 $settings['verify_tls'],
                 $settings['max_error_rate_percent'],
-                $settings['max_avg_response_ms']
+                $settings['max_avg_response_ms'],
+                $settings['api_token']
             );
         }
 
@@ -170,6 +171,7 @@ class RunPortalStressTestCommand extends Command
         $concurrency = max(1, (int) ($this->option('concurrency') ?: config('stress-test.concurrency', 25)));
         $timeout = (float) ($this->option('timeout') ?: config('stress-test.timeout_seconds', 10));
         $timeout = $timeout > 0 ? $timeout : 10;
+        $apiToken = (string) config('stress-test.api_token', env('STRESS_TEST_API_TOKEN', ''));
 
         $providedTargets = $this->option('targets');
         $configuredTargets = config('stress-test.targets', []);
@@ -203,6 +205,7 @@ class RunPortalStressTestCommand extends Command
             'concurrency' => $concurrency,
             'timeout' => $timeout,
             'verify_tls' => (bool) config('stress-test.verify_tls', true),
+            'api_token' => $apiToken,
             'max_error_rate_percent' => (float) config('stress-test.max_error_rate_percent', 3),
             'max_avg_response_ms' => (float) config('stress-test.max_avg_response_ms', 2000),
             'route_discovery' => $routeDiscoveryMeta,
@@ -341,7 +344,8 @@ class RunPortalStressTestCommand extends Command
         $timeoutSeconds,
         $verifyTls,
         $maxErrorRatePercent,
-        $maxAvgResponseMs
+        $maxAvgResponseMs,
+        $apiToken = ''
     ) {
         $client = new Client([
             'http_errors' => false,
@@ -366,17 +370,24 @@ class RunPortalStressTestCommand extends Command
             'passed' => false,
         ];
 
-        $requestsGenerator = function () use ($client, $targetUrl, $requests, $timeoutSeconds) {
+        $requestsGenerator = function () use ($client, $targetUrl, $requests, $timeoutSeconds, $apiToken) {
             for ($i = 0; $i < $requests; $i++) {
-                yield function () use ($client, $targetUrl, $timeoutSeconds) {
+                yield function () use ($client, $targetUrl, $timeoutSeconds, $apiToken) {
                     $requestStart = microtime(true);
+
+                    $headers = [
+                        'User-Agent' => 'HiredHero-StressTest/1.0',
+                    ];
+
+                    // Add authorization header if token is provided
+                    if (!empty($apiToken)) {
+                        $headers['Authorization'] = "Bearer {$apiToken}";
+                    }
 
                     return $client->requestAsync('GET', $targetUrl, [
                         'timeout' => $timeoutSeconds,
                         'connect_timeout' => $timeoutSeconds,
-                        'headers' => [
-                            'User-Agent' => 'HiredHero-StressTest/1.0',
-                        ],
+                        'headers' => $headers,
                     ])->then(function ($response) use ($requestStart) {
                         return [
                             'status_code' => $response->getStatusCode(),

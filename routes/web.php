@@ -286,7 +286,7 @@ Route::group(['middleware' => 'guest'], function () {
  */
 Route::get('/', [HomeController::class, 'home'])->name('front.index');
 Route::get('/coming-soon', [HomeController::class, 'ComingSoon'])->name('front.comingsoon');
-Route::get('/how-to-sell', [HomeController::class, 'how_to_sell'])->name('front.sell');
+// Route::get('/how-to-sell', [HomeController::class, 'how_to_sell'])->name('front.sell');
 Route::get('/book-demo', function () {return redirect('mailto:info@hiredheroai.com?subject=Book%20an%20Institutional%20Demo');
 });
 
