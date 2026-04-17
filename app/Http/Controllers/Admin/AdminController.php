@@ -8,7 +8,7 @@ use App\Models\GeneralSetting;
 use App\Models\Product;
 use App\Models\SocialSetting;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;

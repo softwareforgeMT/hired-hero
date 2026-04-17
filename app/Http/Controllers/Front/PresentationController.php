@@ -11,7 +11,7 @@ class PresentationController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'check.subscription:presentationAccess'])->only([
+        $this->middleware(['auth:sanctum,web', 'check.subscription:presentationAccess'])->only([
             'createPresentation', 'recordPresentation', 'uploadAudio', 'provideFeedback'
         ]);
     }

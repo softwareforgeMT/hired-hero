@@ -13,7 +13,7 @@ use App\Models\JobMatch;
 use App\Models\JobApplication;
 use App\Models\Resume;
 use App\Models\InterviewAttempt;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Hash;
 use Illuminate\Http\Request;

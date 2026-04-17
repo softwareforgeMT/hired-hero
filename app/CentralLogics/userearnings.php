@@ -5,7 +5,7 @@ namespace App\CentralLogics;
 use App\Models\GeneralSetting;
 use App\Models\Order;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class EarningLogic

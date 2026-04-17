@@ -43,7 +43,10 @@ class MessagesController extends Controller
      */
     public function idFetchData(Request $request)
     {
-        return auth()->user();
+        if (!Auth::user()) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        
         // Favorite
         $favorite = Chatify::inFavorite($request['id']);
 
@@ -95,6 +98,14 @@ class MessagesController extends Controller
      */
     public function send(Request $request)
     {
+        if (!Auth::user()) {
+            return Response::json([
+                'status' => '401',
+                'error' => (object)['status' => 1, 'message' => 'Unauthorized'],
+                'message' => [],
+            ], 401);
+        }
+        
         // default variables
         $error = (object)[
             'status' => 0,
@@ -210,15 +221,24 @@ class MessagesController extends Controller
     public function getContacts(Request $request)
     {
         // get all users that received/sent message from/to [Auth user]
+        if (!Auth::user()) {
+            return response()->json([
+                'contacts' => [],
+                'total' => 0,
+                'last_page' => 1,
+            ], 200);
+        }
+        
+        $authUserId = Auth::user()->id;
         $users = Message::join('users',  function ($join) {
             $join->on('ch_messages.from_id', '=', 'users.id')
                 ->orOn('ch_messages.to_id', '=', 'users.id');
         })
-        ->where(function ($q) {
-            $q->where('ch_messages.from_id', Auth::user()->id)
-            ->orWhere('ch_messages.to_id', Auth::user()->id);
+        ->where(function ($q) use ($authUserId) {
+            $q->where('ch_messages.from_id', $authUserId)
+            ->orWhere('ch_messages.to_id', $authUserId);
         })
-        ->where('users.id','!=',Auth::user()->id)
+        ->where('users.id','!=',$authUserId)
         ->select('users.*',DB::raw('MAX(ch_messages.created_at) max_created_at'))
         ->orderBy('max_created_at', 'desc')
         ->groupBy('users.id')
@@ -258,6 +278,13 @@ class MessagesController extends Controller
      */
     public function getFavorites(Request $request)
     {
+        if (!Auth::user()) {
+            return Response::json([
+                'total' => 0,
+                'favorites' => [],
+            ], 401);
+        }
+        
         $favorites = Favorite::where('user_id', Auth::user()->id)->get();
         foreach ($favorites as $favorite) {
             $favorite->user = User::where('id', $favorite->favorite_id)->first();
@@ -276,6 +303,14 @@ class MessagesController extends Controller
      */
     public function search(Request $request)
     {
+        if (!Auth::user()) {
+            return Response::json([
+                'records' => [],
+                'total' => 0,
+                'last_page' => 1
+            ], 401);
+        }
+        
         $input = trim(filter_var($request['input']));
         $records = User::where('id','!=',Auth::user()->id)
                     ->where('name', 'LIKE', "%{$input}%")
@@ -330,6 +365,14 @@ class MessagesController extends Controller
 
     public function updateSettings(Request $request)
     {
+        if (!Auth::user()) {
+            return Response::json([
+                'status' => 0,
+                'error' => 1,
+                'message' => 'Unauthorized',
+            ], 401);
+        }
+        
         $msg = null;
         $error = $success = 0;
 

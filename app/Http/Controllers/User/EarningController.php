@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\GeneralSetting;
 use App\Models\Transaction;
 use App\Models\Withdraw;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DataTables;
 use Illuminate\Http\Request;

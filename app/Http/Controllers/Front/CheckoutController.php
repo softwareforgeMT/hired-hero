@@ -13,7 +13,7 @@ class CheckoutController extends Controller
 {
     public function __construct(Request $request)
     {
-        $this->middleware('auth');
+        $this->middleware('auth:sanctum,web');
         $this->request = $request;
     }
     public function cartStore(Request $request)
@@ -38,7 +38,8 @@ class CheckoutController extends Controller
         'quantity' => $quantity,
       ];
       session()->put('cart', $cart);
-      return redirect()->route('front.checkout');
+    //   return redirect()->route('front.checkout');
+      return response()->json(['message' => 'Product added to cart successfully.']);
     }
 
     public function checkout()

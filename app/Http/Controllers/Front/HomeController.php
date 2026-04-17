@@ -11,7 +11,7 @@ use App\Models\GeneralSetting;
 use App\Models\Order;
 use App\Models\User;
 use App\Notifications\GenericNotification;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Http\Request;
 use Pusher\Pusher;

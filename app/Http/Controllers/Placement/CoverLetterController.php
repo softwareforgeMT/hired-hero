@@ -9,6 +9,7 @@ use App\Models\CoverLetter;
 use App\Services\CoverLetterService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class CoverLetterController extends Controller
 {
@@ -16,7 +17,7 @@ class CoverLetterController extends Controller
 
     public function __construct(CoverLetterService $coverLetterService)
     {
-        $this->middleware('auth');
+        $this->middleware('auth:sanctum,web');
         $this->coverLetterService = $coverLetterService;
     }
 
@@ -26,7 +27,7 @@ class CoverLetterController extends Controller
     public function generate(Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
             $activeSubscription = $user->getActiveSubscription();
 
             // Check if user has cover letter feature enabled
@@ -115,7 +116,7 @@ class CoverLetterController extends Controller
     public function store(Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
             $activeSubscription = $user->getActiveSubscription();
 
             // Verify subscription is still active
@@ -202,7 +203,7 @@ class CoverLetterController extends Controller
     public function finalize(Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
             $activeSubscription = $user->getActiveSubscription();
 
             // Verify subscription
@@ -278,7 +279,12 @@ class CoverLetterController extends Controller
     public function download(Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
+            
+            if (!$user) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
+            
             $fileName = $request->query('file');
 
             if (!$fileName) {
@@ -305,16 +311,22 @@ class CoverLetterController extends Controller
     public function index()
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
+            
+            if (!$user) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
+            
             $coverLetters = $this->coverLetterService->getUserCoverLetters($user);
 
-            return view('placement.cover-letter.index', [
+            return response()->json([
+                'success' => true,
                 'coverLetters' => $coverLetters,
                 'totalCovers' => count($coverLetters),
             ]);
         } catch (\Exception $e) {
             Log::error('Error listing cover letters: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'An error occurred. Please try again.');
+            return response()->json(['error' => 'An error occurred. Please try again.'], 500);
         }
     }
 
@@ -324,7 +336,11 @@ class CoverLetterController extends Controller
     public function show(CoverLetter $coverLetter)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
+            
+            if (!$user) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
 
             // Verify ownership
             if ($coverLetter->user_id !== $user->id) {
@@ -346,7 +362,11 @@ class CoverLetterController extends Controller
     public function destroy(CoverLetter $coverLetter, Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
+            
+            if (!$user) {
+                return $this->jsonErrorResponse('Unauthorized', 401, $request);
+            }
 
             // Verify ownership
             if ($coverLetter->user_id !== $user->id) {
@@ -382,7 +402,11 @@ class CoverLetterController extends Controller
     public function duplicate(CoverLetter $coverLetter, Request $request)
     {
         try {
-            $user = auth()->user();
+            $user = Auth::user();
+            
+            if (!$user) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
 
             // Verify ownership
             if ($coverLetter->user_id !== $user->id) {

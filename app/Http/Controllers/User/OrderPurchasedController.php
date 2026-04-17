@@ -10,7 +10,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderTrack;
 use App\Models\Rating;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DataTables;
 use Illuminate\Http\Request;
