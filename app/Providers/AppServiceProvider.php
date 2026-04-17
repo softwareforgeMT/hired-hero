@@ -7,7 +7,7 @@ use App\CentralLogics\Helpers;
 use App\Models\Category;
 use App\Models\GeneralSetting;
 use App\Models\SocialSetting;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;

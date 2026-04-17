@@ -13,7 +13,7 @@ class MockInterviewController extends Controller
     public function __construct(Request $request)
     {
 
-        $this->middleware(['auth', 'check.subscription:interviewAccess'])->only([
+        $this->middleware(['auth:sanctum,web', 'check.subscription:interviewAccess'])->only([
             'addJobDetails', 'startInterview', 'uploadAudio', 'showResult'
         ]);
     }

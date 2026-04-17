@@ -5,7 +5,7 @@ namespace App\Models;
 use App\CentralLogics\Helpers;
 use App\Models\GeneralSetting;
 use App\Models\Rating;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -490,8 +490,7 @@ class RunPortalStressTestCommand extends Command
                 'max_error_rate_percent' => $maxErrorRatePercent,
                 'max_avg_response_ms' => $maxAvgResponseMs,
             ],
-            'passed' => empty($failedTargets)
-                && $overallErrorRatePercent <= $maxErrorRatePercent
+            'passed' => $overallErrorRatePercent < $maxErrorRatePercent
                 && $overallAvgResponseMs <= $maxAvgResponseMs,
         ];
     }

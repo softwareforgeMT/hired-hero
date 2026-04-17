@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\SocialAccountService;
 use Socialite;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class SocialAuthController extends Controller
 {
     // Redirect function

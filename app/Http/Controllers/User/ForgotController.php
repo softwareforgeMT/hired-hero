@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 use Session;
 use Config;
 use Hash;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class ForgotController extends Controller
 {
     public function __construct()

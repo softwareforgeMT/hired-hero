@@ -25,7 +25,7 @@ class ResumeBuilderController extends Controller
     ) {
         $this->stripePayment = $stripePayment;
         $this->resumeGenerator = $resumeGenerator;
-        $this->middleware('auth')->except(['validatePromoCode']);
+        $this->middleware('auth:sanctum,web')->except(['validatePromoCode']);
     }
 
     /**

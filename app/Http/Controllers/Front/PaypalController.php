@@ -10,14 +10,14 @@ use App\CentralLogics\ProductLogic;
 use App\CentralLogics\Helpers;
 use App\CentralLogics\OrderLogic;
 use App\CentralLogics\TransactionLogic;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 class PaypalController extends Controller
 {   
     public function __construct(Request $request)
     {
-        $this->middleware('auth');
+        $this->middleware('auth:sanctum,web');
     }
     public function processPayment(Request $request)
     {   
@@ -144,6 +144,6 @@ class PaypalController extends Controller
 
     public function cancelPaypal($value='')
     {
-       return redirect()->route('front.checkout')->with('erorr',"Payment Cancelled");
+    //    return redirect()->route('front.checkout')->with('erorr',"Payment Cancelled");
     }
 }

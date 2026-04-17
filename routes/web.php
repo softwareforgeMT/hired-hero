@@ -195,7 +195,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
  * User Routes (authenticated and guest)
  */
 
-Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum,web']], function () {
 
     // Dashboard & Profile
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -364,10 +364,6 @@ Route::get('/create-checkout-session/{slug}', [StripeController::class, 'process
 Route::get('/success', [StripeController::class, 'success'])->name('stripe.success');
 Route::get('/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
 
-// PayPal verification and cancel
-Route::get('paypal/verify', [PaypalController::class, 'verifyTransaction'])->name('paypal.success');
-Route::get('cancel/paypal', [PaypalController::class, 'cancelPaypal'])->name('paypal.cancel');
-
 // Stripe Webhook - MUST NOT have auth middleware
 Route::post('stripe/webhook', [StripeController::class, 'handleStripeWebhook']);
 
@@ -392,7 +388,7 @@ Route::group(['prefix' => 'placement', 'as' => 'placement.'], function () {
     });
     
     // AUTHENTICATED WIZARD ROUTES (Steps 6+ - Authentication Required)
-    Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth:sanctum,web'], function () {
         // Resume upload and job matches (step 6+)
         // Get suggested roles
         Route::get('/profile/{profileId}/suggested-roles', [PlacementWizardController::class, 'getSuggestedRoles'])->name('profile.suggested-roles');
@@ -408,15 +404,15 @@ Route::group(['prefix' => 'placement', 'as' => 'placement.'], function () {
             Route::get('/queue-status', 'App\Http\Controllers\Api\JobScrapingController@checkQueueStatus')->name('scraping.queue-status');
             Route::get('/job-matches', 'App\Http\Controllers\Api\JobScrapingController@getJobMatches')->name('scraping.job-matches');
         });
-    
-    // Job matches
-    Route::get('/jobs', [JobMatchController::class, 'index'])->name('jobs.index');
-    Route::get('/jobs/results', [JobMatchController::class, 'index'])->name('results.index');
-    Route::get('/jobs/filter', [JobMatchController::class, 'filter'])->name('jobs.filter');
-    Route::get('/jobs/{jobMatch}', [JobMatchController::class, 'show'])->name('jobs.show');
-    Route::post('/jobs/{jobMatch}/apply', [JobMatchController::class, 'applyForJob'])->name('jobs.apply');
-    Route::delete('/job-matches/{jobMatch}', [JobMatchController::class, 'destroy'])->name('job-matches.destroy');
-    Route::get('/jobs/{jobMatch}/quality', [JobMatchController::class, 'getMatchQuality'])->name('jobs.quality');
+
+        // Job matches
+        Route::get('/jobs', [JobMatchController::class, 'index'])->name('jobs.index');
+        Route::get('/jobs/results', [JobMatchController::class, 'index'])->name('results.index');
+        Route::get('/jobs/filter', [JobMatchController::class, 'filter'])->name('jobs.filter');
+        Route::get('/jobs/{jobMatch}', [JobMatchController::class, 'show'])->name('jobs.show');
+        Route::post('/jobs/{jobMatch}/apply', [JobMatchController::class, 'applyForJob'])->name('jobs.apply');
+        Route::delete('/job-matches/{jobMatch}', [JobMatchController::class, 'destroy'])->name('job-matches.destroy');
+        Route::get('/jobs/{jobMatch}/quality', [JobMatchController::class, 'getMatchQuality'])->name('jobs.quality');
         
         // Tailored resume generation
         Route::post('/resumes/generate', [TailoredResumeController::class, 'generate'])->name('resumes.generate');
@@ -458,7 +454,7 @@ Route::group(['prefix' => 'placement', 'as' => 'placement.'], function () {
 
 Route::post('/validate-promo-code', [ResumeBuilderController::class, 'validatePromoCode'])->name('validate-promo-code');
 
-Route::group(['prefix' => 'resume-builder', 'as' => 'resume-builder.', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'resume-builder', 'as' => 'resume-builder.', 'middleware' => 'auth:sanctum,web'], function () {
     Route::get('/', [ResumeBuilderController::class, 'form'])->name('form');
     Route::get('/pricing', [ResumeBuilderController::class, 'pricing'])->name('pricing');
     
@@ -474,7 +470,7 @@ Route::group(['prefix' => 'resume-builder', 'as' => 'resume-builder.', 'middlewa
     Route::delete('/{resume}', [ResumeBuilderController::class, 'destroy'])->name('destroy');
 });
 
-Route::get('/resume/{id}/download', [ResumeBuilderController::class, 'download'])->name('resume.download')->middleware('auth');
+Route::get('/resume/{id}/download', [ResumeBuilderController::class, 'download'])->name('resume.download')->middleware('auth:sanctum,web');
 
 // Email Unsubscribe
 Route::get('/email/unsubscribe/{token}', [EmailUnsubscribeController::class, 'handle'])->name('email.unsubscribe');
